@@ -6,7 +6,7 @@
 
 Aurekai integration surface for Gitpod.
 
-Status: planned
+Status: active
 Type: ide
 
 ## Core Template Set

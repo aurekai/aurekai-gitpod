@@ -1,0 +1,22 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Install akai
+    init: |
+      curl -fsSL https://github.com/aurekai/aurekai/releases/download/v0.8.0-alpha.4/install.sh | bash
+      echo 'export PATH="$HOME/.aurekai/bin:$PATH"' >> ~/.bashrc
+    command: |
+      echo "Aurekai dev environment ready. AUREKAI_VERSION=0.8.0-alpha.4"
+
+  - name: Doctor check
+    command: akai doctor --deep || echo "akai not yet installed — run init task first"
+
+vscode:
+  extensions:
+    - ms-python.python
+    - ms-vscode.vscode-json
+
+ports:
+  - port: 8080
+    onOpen: ignore
